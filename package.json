@@ -1,0 +1,22 @@
+{
+  "name": "block-utiq",
+  "version": "0.1.0",
+  "description": "Extension navigateur pour rediriger les sites listés dans block.json vers une page d'information sur Utiq.",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "clean": "node scripts/clean.mjs",
+    "build": "node scripts/build-extension.mjs",
+    "package": "node scripts/package-extension.mjs",
+    "dist": "npm run clean && npm run build && npm run package"
+  },
+  "keywords": [
+    "webextension",
+    "privacy",
+    "utiq"
+  ],
+  "license": "MIT",
+  "devDependencies": {
+    "yazl": "^3.3.1"
+  }
+}

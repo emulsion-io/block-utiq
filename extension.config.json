@@ -1,0 +1,20 @@
+{
+  "name": "Block Utiq",
+  "shortName": "Block Utiq",
+  "description": "Redirige les sites repertories comme utilisant Utiq vers une page d'information.",
+  "actionTitle": "Block Utiq",
+  "icons": {
+    "16": "icons/logo.png",
+    "48": "icons/logo.png",
+    "128": "icons/logo.png"
+  },
+  "blockedPageResources": [
+    "blocked/blocked.html",
+    "blocked/blocked.css",
+    "blocked/blocked.js"
+  ],
+  "gecko": {
+    "id": "block-utiq@emulsion.io",
+    "strictMinVersion": "109.0"
+  }
+}
