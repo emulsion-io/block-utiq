@@ -64,7 +64,13 @@ function createManifest(browser, packageJson, config) {
       browser_specific_settings: {
         gecko: {
           id: config.gecko.id,
+          data_collection_permissions: {
+            required: ["none"]
+          },
           strict_min_version: config.gecko.strictMinVersion
+        },
+        gecko_android: {
+          strict_min_version: config.gecko.androidStrictMinVersion
         }
       }
     };

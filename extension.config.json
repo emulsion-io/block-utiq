@@ -4,9 +4,9 @@
   "description": "Redirige les sites repertories comme utilisant Utiq vers une page d'information.",
   "actionTitle": "Block Utiq",
   "icons": {
-    "16": "icons/logo.png",
-    "48": "icons/logo.png",
-    "128": "icons/logo.png"
+    "16": "icons/logo-16.png",
+    "48": "icons/logo-48.png",
+    "128": "icons/logo-128.png"
   },
   "blockedPageResources": [
     "blocked/blocked.html",
@@ -15,6 +15,7 @@
   ],
   "gecko": {
     "id": "block-utiq@emulsion.io",
-    "strictMinVersion": "109.0"
+    "strictMinVersion": "140.0",
+    "androidStrictMinVersion": "142.0"
   }
 }
