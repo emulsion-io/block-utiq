@@ -11,6 +11,7 @@ d'information indiquant que le domaine est repertorie comme utilisant Utiq.
 - `src/blocked/` contient la page HTML affichée à l'utilisateur.
 - `scripts/build-extension.mjs` génère les extensions Chrome et Firefox.
 - `scripts/package-extension.mjs` crée les archives ZIP à publier.
+- `scripts/update-block-list.mjs` remplace `block.json` depuis un export Utiq au format `sites[].domain`.
 - `dist/` contient les extensions générées et les archives ZIP prêtes à soumettre aux stores.
 
 ## Commandes
@@ -75,3 +76,11 @@ Pour changer la liste embarquée, éditez `block.json`, puis relancez :
 ```bash
 npm run dist
 ```
+
+Pour régénérer rapidement `block.json` depuis un fichier source Utiq :
+
+```bash
+npm run update:blocklist -- "/utiq-sites.json"
+```
+
+Le script lit `sites[].domain`, supprime les doublons et remplace `block.json`.

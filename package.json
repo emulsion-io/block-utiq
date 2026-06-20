@@ -8,6 +8,7 @@
     "clean": "node scripts/clean.mjs",
     "build": "node scripts/build-extension.mjs",
     "package": "node scripts/package-extension.mjs",
+    "update:blocklist": "node scripts/update-block-list.mjs",
     "dist": "npm run clean && npm run build && npm run package"
   },
   "keywords": [
