@@ -69,6 +69,8 @@ Les archives prêtes à soumettre aux stores sont générées dans :
 
 La liste embarquée dans l'extension vient de `block.json`. Une fois installée, l'extension met ensuite son cache à jour toutes les 24h depuis :
 
+La source de blocage actuelle est https://utiq-tracker.online/
+
 `https://github.com/emulsion-io/block-utiq/blob/main/block.json`
 
 Pour changer la liste embarquée, éditez `block.json`, puis relancez :
