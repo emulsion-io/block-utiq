@@ -52,6 +52,12 @@ Les archives prêtes à soumettre aux stores sont générées dans :
 
 ## Tester localement
 
+## Installer l'extension
+
+[![Firefox Add-ons](https://img.shields.io/badge/Firefox%20Add--ons-FC4C02?style=for-the-badge&logo=firefoxbrowser&logoColor=white)](https://addons.mozilla.org/fr/firefox/addon/block-utiq/)
+
+[![Chrome Web Store](https://img.shields.io/badge/Chrome%20Web%20Store-4285F4?style=for-the-badge&logo=googlechrome&logoColor=white)](https://chromewebstore.google.com/detail/block-utiq/fddneamdobjhlpnnhdkihdgmbifghidd?authuser=0&hl=fr)
+
 ### Chrome
 
 1. Ouvrir `chrome://extensions`.
