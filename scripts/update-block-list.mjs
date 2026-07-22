@@ -3,18 +3,14 @@ import { basename, resolve } from "node:path";
 
 const projectRoot = resolve(".");
 const blockListPath = resolve(projectRoot, "block.json");
-const sourceArg = process.argv[2];
-
-if (!sourceArg) {
-  console.error("Usage: node scripts/update-block-list.mjs <source-json>");
-  process.exit(1);
-}
+const sourceArg = process.argv[2] ?? "tmp/utiq-sites.json";
 
 const sourcePath = resolve(projectRoot, sourceArg);
 const source = JSON.parse(await readFile(sourcePath, "utf8"));
 const domains = extractDomains(source);
+const lastUpdate = extractLastUpdate(source);
 
-await writeFile(blockListPath, `${JSON.stringify({ blocked: domains }, null, 2)}\n`);
+await writeFile(blockListPath, `${JSON.stringify({ lastUpdate, blocked: domains }, null, 2)}\n`);
 
 console.log(`block.json mis a jour depuis ${basename(sourcePath)} avec ${domains.length} domaines.`);
 
@@ -30,4 +26,15 @@ function extractDomains(input) {
     .map((domain) => domain.replace(/^https?:\/\//, "").replace(/\/.*$/, ""));
 
   return [...new Set(domains)];
+}
+
+function extractLastUpdate(input) {
+  const generatedAt = input?.meta?.generated_at;
+  const date = new Date(generatedAt);
+
+  if (!generatedAt || Number.isNaN(date.getTime())) {
+    throw new Error("Le fichier source doit contenir une date meta.generated_at valide.");
+  }
+
+  return date.toISOString().replace(".000Z", "Z");
 }
